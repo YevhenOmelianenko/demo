@@ -40,9 +40,9 @@ export class UsersController {
   @Get(':id')
   async findOne(@Param('id') id: string) {
     try {
-      const user = await this.usersService.findOne(+id);
+      const user = await this.usersService.findOne(id);
       if (user === null) {
-        throw new UserNotFoundError(+id);
+        throw new UserNotFoundError(id);
       }
       return user;
     } catch (err: any) {
@@ -53,9 +53,9 @@ export class UsersController {
   @Patch(':id')
   async update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     try {
-      const user = await this.usersService.update(+id, updateUserDto);
+      const user = await this.usersService.update(id, updateUserDto);
       if (user === null) {
-        throw new UserNotFoundError(+id);
+        throw new UserNotFoundError(id);
       }
       return user;
     } catch (err: any) {
@@ -66,7 +66,7 @@ export class UsersController {
   @Delete(':id')
   async remove(@Param('id') id: string) {
     try {
-      const result = await this.usersService.remove(+id);
+      const result = await this.usersService.remove(id);
       if (result.affected === 0) {
         throw new UserNotDeletedError();
       }
