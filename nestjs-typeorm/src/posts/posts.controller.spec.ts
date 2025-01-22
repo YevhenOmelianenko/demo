@@ -5,7 +5,7 @@ import { PostsController } from './posts.controller';
 import { PostsService } from './posts.service';
 import { Post } from './entities/post.entity';
 
-describe('UsersController', () => {
+describe('PostsController', () => {
   let controller: PostsController;
   let mockRepository: jest.Mocked<Repository<Post>>;
   let mockDatasource: jest.Mocked<DataSource>;
