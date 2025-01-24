@@ -1,5 +1,5 @@
-import { Post } from '../entities/post.entity';
-import { fakeUser } from '../../users/fakes/user.fake';
+import { Post } from '@app/posts/entities/post.entity';
+import { fakeUser } from '@app/users/fakes/user.fake';
 
 const fakePost = new Post();
 fakePost.id = '970a35b0-079e-49e3-8d7e-582b279fe3eb';
